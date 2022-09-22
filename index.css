@@ -1,0 +1,178 @@
+li {
+    list-style: none;
+}
+
+* {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #4a98f7;
+}
+
+.container {
+    display: flex;
+    gap: 10px;
+    padding: 10px;
+    width: 100%;
+    max-width: 1050px;
+}
+
+section {
+    background-color: #fff;
+    border-radius: 7px;
+}
+
+.tools-board {
+    width: 210px;
+    padding: 15px 22px;
+}
+
+.tools-board .row {
+    margin-bottom: 20px;
+}
+
+.row .options {
+    margin: 10px 0 0 5px;
+}
+
+.row .options .option {
+    display: flex;
+    cursor: pointer;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+
+
+.option :where(span, label) {
+    color: #5a6168;
+    padding-left: 10px;
+}
+
+.option:is(:hover, .active) {
+    color: blue;
+}
+
+.option:is(:hover, .active) :where(span, label) {
+    color: blue;
+
+}
+
+.option #fill-color {
+    height: 14px;
+    width: 14px;
+    cursor: pointer;
+}
+
+#fill-color:checked~label {
+    color: #4a98f7;
+}
+
+input[type="range"] {
+    width: 100%;
+    height: 5px;
+    margin-top: 10px;
+}
+
+.color .options {
+    display: flex;
+    justify-content: space-between;
+}
+
+.color .option {
+    width: 20px;
+    height: 20px;
+    background-color: red;
+    border-radius: 50%;
+    margin-top: 3px;
+    position: relative;
+}
+
+.color .option:nth-child(1) {
+    background-color: #fff;
+    border: 1px solid #bfbfbf;
+}
+
+.color .option:nth-child(2) {
+    background-color: rgb(19, 17, 17);
+}
+
+.color .option:nth-child(3) {
+    background-color: rgb(185, 18, 18);
+}
+
+.color .option:nth-child(4) {
+    background-color: rgb(147, 233, 77);
+}
+
+.color .option:nth-child(5) {
+    background-color: rgb(54, 154, 221);
+}
+
+.color .option.selected::before {
+    position: absolute;
+    content: "";
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: 2px solid #fff;
+    border-radius: inherit;
+    background-color: inherit;
+    height: 12px;
+    width: 12px;
+}
+
+.color .option:first-child.selected::before {
+    border-color: #ccc;
+}
+.color #color-picker{
+    opacity: 0;
+    cursor: pointer;
+}
+
+.buttons button {
+    width: 100%;
+    color: #fff;
+    border: none;
+    outline: none;
+    padding: 11px 0;
+    font-size: .9rem;
+    margin-bottom: 10px;
+    background: none;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.buttons .clear-canvas {
+    color: #6c7576;
+    border: 1px solid #6c7576;
+    transition: all .3s ease;
+}
+
+.buttons .clear-canvas:hover {
+    background-color: #4a98f7;
+    color: #fff;
+}
+
+.buttons .save-img {
+    background-color: #4a98f7;
+    border: 1px solid #4a98f7;
+}
+
+.draw-board {
+    flex: 1;
+}
+
+.draw-board canvas{
+    width: 100%;
+    height: 100%;
+    
+}
